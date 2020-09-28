@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="/socket.io/socket.io.js"></script>
+	<link rel="stylesheet" href="/style.css">
+	<title>Test page</title>
+	<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+</head>
+<body>
+	<div id="join-cont" class="join-container">
+		<h1 class="title glow multicolor">Joe's Drawing Game</h1>
+		<div id="room-input" class="input">
+				<input id="roomname-input" type="text" placeholder="Room">
+
+				<button onclick="joinRoom();">Join</button>
+			</div>
+		<div id="room-info" hidden class="input-container">
+			<p id="roomname" style="margin: 0;">Room name: </p>
+			<table>
+				<tbody id="userlist">
+					<tr>
+						<td><input oninput="changeUsername();" id="username" class="username-input blinker" type="username" placeholder="Username" value=""></td>
+						<td id="ownscore">0</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<p id="info">Please enter a roomname above</p>
+		<button style="visibility: hidden;" onclick="startGame();" id="game-button">Start Game</button>
+	</div>
+	<div class="draw-container">
+		<div class="option">
+			<h2>Options</h2>
+			<p style="font-size: 15px;">Color</p>
+			<div onclick="setColor('black');" class="blob black"></div>
+			<div onclick="setColor('red');" class="blob red"></div>
+			<div onclick="setColor('blue');" class="blob blue"></div>
+			<div onclick="setColor('green');" class="blob green"></div>
+			<p style="font-size: 15px;">Brush Size</p>	
+			<div onclick="setBrushSize(5);" class="blob small"></div>
+			<div onclick="setBrushSize(10);" class="blob mid"></div>
+			<div onclick="setBrushSize(15);" class="blob big"></div>
+		</div>
+		<div class="chat">
+			<h2>Guesses</h2>
+			<div id="chat-log" class="chat-log">
+			</div>
+			<form autocomplete="off" onsubmit="sendGuess();return false">
+				<input id="guess-input" class="chat-input" placeholder="Guess" type="text">
+			</form>
+		</div>
+		<canvas onmousemove="draw(event);" onmouseup="stopDraw();" onmousedown="startDraw();" id="drawCanvas"></canvas>
+		
+		<h1 id="guess-word">_ _ _ _ _ _ _ _ _ _ _ _ _</h1>
+	</div>
+	<script type="text/javascript" src="/main.js"></script>
+	<script type="text/javascript" src="/sockets_emit.js"></script>
+	<script type="text/javascript" src="/sockets_on.js"></script>
+</body>
+</html>

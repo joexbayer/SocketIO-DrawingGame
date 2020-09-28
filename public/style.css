@@ -1,0 +1,207 @@
+body {
+	background-color: black;
+	padding: 0;
+	margin: 0;
+	color: white;
+	font-family: 'Lobster', cursive;
+}
+
+#drawCanvas{
+	text-align: center;
+	background-color: white;
+	border: solid black 3px;
+	margin-left: 1%;
+
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 25%;
+  }
+}
+
+
+
+.draw-container {
+	position: absolute;
+	left: 20%;
+	top: 15%;
+	text-align: center;
+	z-index: 1;
+}
+
+.option{
+	position: absolute;
+	width: 9vw;
+	height: 69vh;
+	border:solid 2px white;
+	left:-19%;
+}
+.chat {
+	position: absolute;
+	width: 19vw;
+	height: 69vh;
+	left: 101%;
+	border:solid 2px white;
+	overflow: hidden;
+}
+
+.join-container{
+	text-align: center;
+	height: 90vh;
+	width: 80vw;
+	background-color: black;
+	border:solid 2px white;
+	padding: 0;
+	margin: auto;
+	overflow: hidden;
+	transition: 1s;
+	position: absolute;
+	left: 10%;
+	z-index: 999;
+}
+.join-container:hover{
+	height: 90vh;
+	transition: 1s;
+}
+
+.multicolor {
+	width: 37%;
+	margin: auto;
+	padding: 20px;
+	font-size: 40px;
+	background-image: linear-gradient(to left, violet, indigo, green, blue, yellow, orange, red);
+	-webkit-background-clip: text;
+    -moz-background-clip: text;
+	background-clip: text;
+    color: transparent;
+}
+
+.blob {
+	width: 30%;
+	margin-bottom: 10px;
+	margin-left: 30%;
+	height: 7%;
+	border-radius: 100%;
+	border: solid white 2px;
+}
+
+.chat-input {
+	width: 80%;
+	height: 5%;
+	color: white;
+	font-size: 20px;
+	position: absolute;
+	top: 93%;
+	left: 12%;
+
+}
+
+.chat-log {
+	text-align: right;
+	width: 65%;
+	height: 40%;;
+	margin: 0;
+	height: auto;
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	bottom: 8%;
+	margin-left: 1.5%;
+	overflow: hidden;
+}
+
+.chat-log p {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	font-size: 15px;
+}
+
+.red {
+	background-color: red;
+}
+
+.blue {
+	background-color: blue;
+}
+.green {
+	background-color: green;
+}
+
+.small {
+	width: 15%;
+	height: 3%;
+}
+
+.mid {
+	width: 20%;
+	height: 5%;
+}
+
+input {
+	font-family: 'Lobster', cursive;
+	font-size: 40px;
+	border:none;
+	background:transparent;
+	width: 30%;
+}
+
+button {
+	font-family: 'Lobster', cursive;
+	font-size: 40px;
+}
+
+.username-input {
+	font-family: 'Lobster', cursive;
+	animation: blinker 1.5s linear infinite;
+	font-size: 40px;
+	border:none;
+	background:transparent;
+	width: auto;
+}
+
+ul {
+	list-style-type: none;
+	text-align: left;
+}
+
+#userlist td {
+	font-size: 40px;
+	text-align: left;
+	
+}
+
+#scorelist {
+	position: absolute;
+	left: 50%;
+	top: 15%;
+	width: 10%;
+	height: auto;
+}
+
+.input-container{
+	position: relative;
+	color: black;
+	width: 50%;
+	height: 50%;
+	margin: auto;
+	background-color: white;
+	border-radius: 20px;
+	border:solid 2px black;
+}
+.input-container li {
+	font-size: 40px;
+}
+#roomname-input {
+	text-align: center;
+	color: white;
+}
+
+#guess-word {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+p {
+	font-size: 30px;
+}
